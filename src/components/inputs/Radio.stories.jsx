@@ -26,13 +26,13 @@ export const Default = props => (
 
 export const ThreeRadios = props => (
     <BaseElement kind={"div"}>
-        <BaseElement kind={"div"} bluelibClassNames={"color-blue"}>
+        <BaseElement kind={"label"} bluelibClassNames={"color-blue"}>
             <Radio value={"articuno"} {...props}/> Articuno
         </BaseElement>
-        <BaseElement kind={"div"} bluelibClassNames={"color-yellow"}>
+        <BaseElement kind={"label"} bluelibClassNames={"color-yellow"}>
             <Radio value={"zapdos"} {...props}/> Zapdos
         </BaseElement>
-        <BaseElement kind={"div"} bluelibClassNames={"color-red"}>
+        <BaseElement kind={"label"} bluelibClassNames={"color-red"}>
             <Radio value={"moltres"} {...props}/> Moltres
         </BaseElement>
     </BaseElement>
