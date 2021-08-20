@@ -6,18 +6,18 @@ import mergeClassNames from "classnames"
 
 
 interface OptionProps {
-    label: string,
+    value: string,
 
     [props: string]: any,
 }
 
 
-export function Option({label, ...props}: OptionProps): JSX.Element {
+export function Option({value, ...props}: OptionProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input-option")
 
     return (
         <BaseElement kind={"option"} {...props}>
-            {label}
+            {value}
         </BaseElement>
     )
 }
