@@ -1,13 +1,17 @@
-import * as React from "react";
+import * as React from "react"
+import Color from "color"
+import {Argument as ClassNamesArgument} from "classnames"
 
-export type {Argument as ClassNames} from "classnames"
 
-// export type IntrinsicComponentKind = JSX.IntrinsicElements
-// export type FunctionComponentKind = (props: object) => JSX.Element
-// export type ClassComponentKind = typeof React.Component
-// export type ComponentKind = IntrinsicComponentKind | FunctionComponentKind | ClassComponentKind
-export type ComponentKind = any
+export type ClassNames = ClassNamesArgument
 
 
 export type State<S> = [S, React.Dispatch<React.SetStateAction<S>>]
 export type StateContext<S> = React.Context<State<S> | undefined>
+
+
+export interface BluelibProps<T> extends React.HTMLProps<T> {
+    bluelibClassNames?: ClassNames,
+    customColor?: typeof Color,
+    disabled?: boolean,
+}
