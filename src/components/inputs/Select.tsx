@@ -3,38 +3,21 @@ import * as ReactDOM from "react-dom"
 import * as Types from "../../types"
 import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
-import {SelectContext} from "./SelectContext";
+import {Option} from "./Option"
+import {OptionGroup} from "./OptionGroup"
 
 
-interface SelectProps {
-    disabled?: boolean,
-
-    onChange?: (contents: string) => void,
-
-    children: React.ReactNode,
-
-    [props: string]: any,
-}
+interface SelectProps extends Types.BluelibProps<HTMLSelectElement> {}
 
 
-export function Select({onChange, ...props}: SelectProps): JSX.Element {
-
+export function Select({...props}: SelectProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input", "input-select")
 
-    const onChangeWrapper = React.useCallback(
-
-        (event: React.ChangeEvent<HTMLSelectElement>): void => {
-            const contents = event.target.value
-
-            if(onChange) {
-                onChange(contents)
-            }
-        },
-
-        [onChange]
-    )
-
     return (
-        <BaseElement kind={"select"} multiple={false} onChange={onChangeWrapper} {...props}/>
+        <BaseElement kind={"select"} multiple={false} required={true} {...props}/>
     )
 }
+
+
+Select.Option = Option
+Select.Group = OptionGroup

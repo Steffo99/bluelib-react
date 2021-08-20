@@ -1,13 +1,13 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as Decorators from "../../utils/Decorators"
-import { Select } from "./Select"
+import { Select, Select as SelectComponent } from "./Select"
 import { Option } from "./Option"
 import { OptionGroup } from "./OptionGroup"
 
 
 export default {
-    component: Select,
+    component: SelectComponent,
     title: "Inputs/Select",
     decorators: [Decorators.Bluelib],
     argTypes: {
@@ -18,32 +18,32 @@ export default {
 }
 
 
-export const Default = props => (
-    <Select {...props}>
-        <Option value={"Yes"}/>
-        <Option value={"Maybe"}/>
-        <Option value={"No"}/>
-    </Select>
+export const Basic = props => (
+    <SelectComponent {...props}>
+        <SelectComponent.Option value={"Yes"}/>
+        <SelectComponent.Option value={"Maybe"}/>
+        <SelectComponent.Option value={"No"}/>
+    </SelectComponent>
 )
-Default.args = {
+Basic.args = {
     disabled: false,
 }
 
 
 export const WithGroups = props => (
-    <Select {...props}>
-        <Option value={"Ungrouped"}/>
-        <OptionGroup label={"A"}>
-            <Option value={"Anchor"}/>
-            <Option value={"Angel"}/>
-            <Option value={"Anti-air"}/>
-        </OptionGroup>
-        <OptionGroup label={"B"}>
-            <Option value={"Banana"}/>
-            <Option value={"Boat"}/>
-            <Option value={"Bus"}/>
-        </OptionGroup>
-    </Select>
+    <SelectComponent {...props}>
+        <SelectComponent.Option value={"Ungrouped"}/>
+        <SelectComponent.Group label={"A"}>
+            <SelectComponent.Option value={"Anchor"}/>
+            <SelectComponent.Option value={"Angel"}/>
+            <SelectComponent.Option value={"Anti-air"}/>
+        </SelectComponent.Group>
+        <SelectComponent.Group label={"B"}>
+            <SelectComponent.Option value={"Banana"}/>
+            <SelectComponent.Option value={"Boat"}/>
+            <SelectComponent.Option value={"Bus"}/>
+        </SelectComponent.Group>
+    </SelectComponent>
 )
 WithGroups.args = {
     disabled: false,

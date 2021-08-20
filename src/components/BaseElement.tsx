@@ -23,6 +23,8 @@ export function BaseElement({kind = "div", bluelibClassNames, disabled = false, 
 
     // Possibly disable the element
     bluelibClassNames = mergeClassNames(bluelibClassNames, disabled ? "status-disabled" : "")
+    // @ts-ignore
+    props.disabled = disabled
 
     // Map regular class names to module class names
     bluelibClassNames = BluelibMapper.rootToModule(bluelibClassNames)

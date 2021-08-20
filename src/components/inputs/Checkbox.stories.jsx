@@ -1,50 +1,21 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as Decorators from "../../utils/Decorators"
-import { Checkbox } from "./Checkbox"
+import { Checkbox as CheckboxComponent } from "./Checkbox"
 import { Box } from "../panels/Box"
 import { BaseElement } from "../BaseElement"
 
 
 export default {
-    component: Checkbox,
+    component: CheckboxComponent,
     title: "Inputs/Checkbox",
     decorators: [Decorators.Bluelib],
-    argTypes: {
-        customColor: {
-            control: {type: "color"},
-        },
-    },
 }
 
 
-export const Default = props => (
-    <Checkbox value={"zero"} {...props}/>
+export const Checkbox = props => (
+    <CheckboxComponent value={"zero"} {...props}/>
 )
-
-
-
-export const ThreeCheckboxes = props => (
-    <BaseElement kind={"div"}>
-        <BaseElement kind={"label"} bluelibClassNames={"color-blue"}>
-            <Checkbox value={"suicune"} {...props}/> Suicune
-        </BaseElement>
-        <BaseElement kind={"label"} bluelibClassNames={"color-yellow"}>
-            <Checkbox value={"raikou"} {...props}/> Raikou
-        </BaseElement>
-        <BaseElement kind={"label"} bluelibClassNames={"color-red"}>
-            <Checkbox value={"entei"} {...props}/> Entei
-        </BaseElement>
-    </BaseElement>
-)
-ThreeCheckboxes.args = {
-    name: "example"
-}
-ThreeCheckboxes.argTypes = {
-    customColor: {
-        control: {type: "color"},
-    },
-    value: {
-        control: {type: "null"},
-    },
+Checkbox.args = {
+    name: "number"
 }
