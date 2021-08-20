@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-interface CheckboxProps extends Types.BluelibProps<HTMLInputElement> {}
+export interface CheckboxProps extends Types.BluelibProps<HTMLInputElement> {}
 
 
 export function Checkbox({onChange, ...props}: CheckboxProps): JSX.Element {

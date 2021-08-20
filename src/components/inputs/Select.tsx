@@ -7,7 +7,7 @@ import {Option} from "./Option"
 import {OptionGroup} from "./OptionGroup"
 
 
-interface SelectProps extends Types.BluelibProps<HTMLSelectElement> {}
+export interface SelectProps extends Types.BluelibProps<HTMLSelectElement> {}
 
 
 export function Select({...props}: SelectProps): JSX.Element {

@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-interface FieldProps extends Types.BluelibProps<HTMLInputElement> {}
+export interface FieldProps extends Types.BluelibProps<HTMLInputElement> {}
 
 
 export function Field({onChange, value, ...props}: FieldProps): JSX.Element {

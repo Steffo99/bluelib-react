@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-interface RadioProps extends Types.BluelibProps<HTMLInputElement> {}
+export interface RadioProps extends Types.BluelibProps<HTMLInputElement> {}
 
 
 export function Radio({onChange, ...props}: RadioProps): JSX.Element {
