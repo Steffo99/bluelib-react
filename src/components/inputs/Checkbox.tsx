@@ -8,7 +8,7 @@ import mergeClassNames from "classnames"
 interface CheckboxProps {
     disabled?: boolean,
 
-    onChange?: (value: string, checked: boolean) => boolean,
+    onChange?: (value: string, checked: boolean) => void,
 
     name: string,
     value: string,
@@ -22,15 +22,13 @@ export function Checkbox({onChange, ...props}: CheckboxProps): JSX.Element {
 
     const onChangeWrapper = React.useCallback(
 
-        (event: React.ChangeEvent<HTMLInputElement>): boolean => {
+        (event: React.ChangeEvent<HTMLInputElement>): void => {
             const checked = event.target.checked
             const value = event.target.value
 
             if(onChange) {
-                return onChange(value, checked)
+                onChange(value, checked)
             }
-
-            return false
         },
 
         [onChange]

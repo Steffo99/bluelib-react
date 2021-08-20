@@ -8,7 +8,7 @@ import mergeClassNames from "classnames"
 interface MultiselectProps {
     disabled?: boolean,
 
-    onChange?: (contents: string[]) => boolean,
+    onChange?: (contents: string[]) => void,
 
     children: React.ReactNode,
 
@@ -21,15 +21,13 @@ export function Multiselect({onChange, ...props}: MultiselectProps): JSX.Element
 
     const onChangeWrapper = React.useCallback(
 
-        (event: React.ChangeEvent<HTMLSelectElement>): boolean => {
+        (event: React.ChangeEvent<HTMLSelectElement>): void => {
             const options = Array.from(event.target.selectedOptions)
             const contents = options.map((option: HTMLOptionElement) => option.value)
 
             if(onChange) {
-                return onChange(contents)
+                onChange(contents)
             }
-
-            return false
         },
 
         [onChange]

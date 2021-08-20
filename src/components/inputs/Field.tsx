@@ -10,7 +10,7 @@ interface FieldProps {
     required?: boolean,
     disabled?: boolean,
 
-    onChange: (contents: string) => boolean,
+    onChange: (contents: string) => void,
     value?: string,
 
     [props: string]: any,
@@ -22,14 +22,12 @@ export function Field({onChange, value, ...props}: FieldProps): JSX.Element {
 
     const onChangeWrapper = React.useCallback(
 
-        (event: React.ChangeEvent<HTMLInputElement>): boolean => {
+        (event: React.ChangeEvent<HTMLInputElement>): void => {
             const contents = event.target.value
 
             if(onChange) {
-                return onChange(contents)
+                onChange(contents)
             }
-
-            return false
         },
 
         [onChange]

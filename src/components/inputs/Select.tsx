@@ -9,7 +9,7 @@ import {SelectContext} from "./SelectContext";
 interface SelectProps {
     disabled?: boolean,
 
-    onChange?: (contents: string) => boolean,
+    onChange?: (contents: string) => void,
 
     children: React.ReactNode,
 
@@ -23,14 +23,12 @@ export function Select({onChange, ...props}: SelectProps): JSX.Element {
 
     const onChangeWrapper = React.useCallback(
 
-        (event: React.ChangeEvent<HTMLSelectElement>): boolean => {
+        (event: React.ChangeEvent<HTMLSelectElement>): void => {
             const contents = event.target.value
 
             if(onChange) {
-                return onChange(contents)
+                onChange(contents)
             }
-
-            return false
         },
 
         [onChange]

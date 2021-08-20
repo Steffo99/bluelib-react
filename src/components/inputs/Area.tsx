@@ -10,7 +10,7 @@ interface AreaProps {
     required?: boolean,
     disabled?: boolean,
 
-    onChange: (contents: string) => boolean,
+    onChange: (contents: string) => void,
     value?: string,
 
     [props: string]: any,
@@ -22,14 +22,12 @@ export function Area({onChange, ...props}: AreaProps): JSX.Element {
 
     const onChangeWrapper = React.useCallback(
 
-        (event: React.ChangeEvent<HTMLTextAreaElement>): boolean => {
+        (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
             const contents = event.target.value
 
             if(onChange) {
-                return onChange(contents)
+                onChange(contents)
             }
-
-            return false
         },
 
         [onChange]

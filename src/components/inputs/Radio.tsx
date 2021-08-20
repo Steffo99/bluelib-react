@@ -8,7 +8,7 @@ import mergeClassNames from "classnames"
 interface RadioProps {
     disabled?: boolean,
 
-    onChange?: (value: string) => boolean,
+    onChange?: (value: string) => void,
 
     name: string,
     value: string,
@@ -22,14 +22,12 @@ export function Radio({onChange, ...props}: RadioProps): JSX.Element {
 
     const onChangeWrapper = React.useCallback(
 
-        (event: React.ChangeEvent<HTMLInputElement>): boolean => {
+        (event: React.ChangeEvent<HTMLInputElement>): void => {
             const value = event.target.value
 
             if(onChange) {
-                return onChange(value)
+                onChange(value)
             }
-
-            return false
         },
 
         [onChange]
