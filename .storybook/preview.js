@@ -14,5 +14,30 @@ export const parameters = {
             type: "color",
             description: "Apply a Bluelib custom color to the element",
         },
-    }
+    },
+    args: {
+        disabled: false,
+    },
+    options: {
+        storySort: {
+            order: [
+                "Core",
+                "Layouts",
+                "Panels",
+                "Chapters",
+                "Separators",
+                "Images",
+                "Tables",
+                "Lists",
+                "Status",
+                "Inputs",
+                "Forms",
+                "Common",
+                "Annotations",
+                "Semantics",
+                "Colors",
+                "Internals",
+            ]
+        }
+    },
 }

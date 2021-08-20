@@ -11,9 +11,7 @@ import {TableRow} from "./TableRow";
 import {TableCell} from "./TableCell";
 
 
-interface TableProps extends Types.BluelibProps<HTMLTableElement> {
-
-}
+interface TableProps extends Types.BluelibProps<HTMLTableElement> {}
 
 
 export function Table({...props}: TableProps): JSX.Element {

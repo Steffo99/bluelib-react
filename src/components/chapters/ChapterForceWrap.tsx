@@ -5,11 +5,11 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface BaseLayoutProps extends Types.BluelibProps<HTMLDivElement> {}
+export interface ChapterForceWrapProps extends Types.BluelibProps<HTMLDivElement> {}
 
 
-export function BaseLayout({...props}: BaseLayoutProps): JSX.Element {
-    props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "layout")
+export function ChapterForceWrap({...props}: ChapterForceWrapProps): JSX.Element {
+    props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "chapter-forcewrap")
 
     return (
         <BaseElement kind={"div"} {...props}/>

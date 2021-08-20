@@ -5,11 +5,11 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface BaseLayoutProps extends Types.BluelibProps<HTMLDivElement> {}
+export interface LayoutFillSingleProps extends Types.BluelibProps<HTMLDivElement> {}
 
 
-export function BaseLayout({...props}: BaseLayoutProps): JSX.Element {
-    props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "layout")
+export function LayoutFillSingle({...props}: LayoutFillSingleProps): JSX.Element {
+    props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "layout-fill-single")
 
     return (
         <BaseElement kind={"div"} {...props}/>
