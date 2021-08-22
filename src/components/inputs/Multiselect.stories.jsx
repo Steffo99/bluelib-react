@@ -12,7 +12,8 @@ export default {
     title: "Inputs/Multiselect",
     decorators: [Decorators.Bluelib],
     argTypes: {
-        onChange: {action: "changed"},
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
     },
 }
 

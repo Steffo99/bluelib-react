@@ -9,15 +9,24 @@ import {OptionGroup} from "./OptionGroup";
 
 export interface MultiselectProps extends Types.BluelibHTMLProps<HTMLSelectElement> {
     onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
+    onSimpleChange?: (value: string[]) => void,
     value?: string[],
 }
 
 
-export function Multiselect({...props}: MultiselectProps): JSX.Element {
+export function Multiselect({onChange, onSimpleChange, ...props}: MultiselectProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input", "input-multiselect")
 
+    const onChangeWrapped = React.useCallback(
+        event => {
+            if(onChange) onChange(event)
+            if(onSimpleChange) onSimpleChange(Array.from<HTMLOptionElement>(event.target.selectedOptions).map(option => option.value))
+        },
+        [onChange, onSimpleChange]
+    )
+
     return (
-        <BaseElement kind={"select"} multiple={true} {...props}/>
+        <BaseElement kind={"select"} multiple={true} onChange={onChangeWrapped} {...props}/>
     )
 }
 

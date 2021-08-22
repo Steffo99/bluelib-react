@@ -11,14 +11,16 @@ export default {
     title: "Inputs/Radio",
     decorators: [Decorators.Bluelib],
     argTypes: {
-        onChange: {action: "changed"},
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
     },
 }
 
 
 export const Radio = props => (
-    <RadioComponent value={"zero"} {...props}/>
+    <RadioComponent {...props}/>
 )
 Radio.args = {
-    name: "number"
+    name: "what",
+    value: "this-radio-right-here",
 }

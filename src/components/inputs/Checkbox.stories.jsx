@@ -11,14 +11,16 @@ export default {
     title: "Inputs/Checkbox",
     decorators: [Decorators.Bluelib],
     argTypes: {
-        onChange: {action: "changed"},
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
     },
 }
 
 
 export const Checkbox = props => (
-    <CheckboxComponent value={"zero"} {...props}/>
+    <CheckboxComponent {...props}/>
 )
 Checkbox.args = {
-    name: "number"
+    name: "what",
+    value: "this-checkbox-right-here",
 }

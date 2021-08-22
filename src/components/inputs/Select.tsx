@@ -9,15 +9,24 @@ import {OptionGroup} from "./OptionGroup"
 
 export interface SelectProps extends Types.BluelibHTMLProps<HTMLSelectElement> {
     onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
+    onSimpleChange?: (value: string) => void,
     value?: string,
 }
 
 
-export function Select({...props}: SelectProps): JSX.Element {
+export function Select({onChange, onSimpleChange, ...props}: SelectProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input", "input-select")
 
+    const onChangeWrapped = React.useCallback(
+        event => {
+            if(onChange) onChange(event)
+            if(onSimpleChange) onSimpleChange(event.target.value)
+        },
+        [onChange, onSimpleChange]
+    )
+
     return (
-        <BaseElement kind={"select"} multiple={false} required={true} {...props}/>
+        <BaseElement kind={"select"} multiple={false} required={true} onChange={onChangeWrapped} {...props}/>
     )
 }
 

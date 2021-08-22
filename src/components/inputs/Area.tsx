@@ -7,14 +7,23 @@ import mergeClassNames from "classnames"
 
 export interface AreaProps extends Types.BluelibHTMLProps<HTMLTextAreaElement> {
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+    onSimpleChange?: (value: string) => void,
     value?: string,
 }
 
 
-export function Area({...props}: AreaProps): JSX.Element {
+export function Area({onChange, onSimpleChange, ...props}: AreaProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input", "input-area")
 
+    const onChangeWrapped = React.useCallback(
+        event => {
+            if(onChange) onChange(event)
+            if(onSimpleChange) onSimpleChange(event.target.value)
+        },
+        [onChange, onSimpleChange]
+    )
+
     return (
-        <BaseElement kind={"textarea"} {...props}/>
+        <BaseElement kind={"textarea"} onChange={onChangeWrapped} {...props}/>
     )
 }

@@ -9,7 +9,8 @@ export default {
     title: "Inputs/Area",
     decorators: [Decorators.Bluelib],
     argTypes: {
-        onChange: {action: "changed"},
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
     },
 }
 
