@@ -6,7 +6,7 @@ import mergeClassNames from "classnames"
 
 
 
-interface TableCaptionProps extends Types.BluelibProps<HTMLTableCaptionElement> {
+interface TableCaptionProps extends Types.BluelibHTMLProps<HTMLTableCaptionElement> {
     position: "top" | "bottom",
 }
 

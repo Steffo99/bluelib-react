@@ -7,7 +7,7 @@ import {ListTerm} from "./ListTerm";
 import {ListDetails} from "./ListDetails";
 
 
-export interface ListDescriptionProps extends Types.BluelibProps<HTMLDListElement> {}
+export interface ListDescriptionProps extends Types.BluelibHTMLProps<HTMLDListElement> {}
 
 
 export function ListDescription({...props}: ListDescriptionProps): JSX.Element {

@@ -7,7 +7,10 @@ import {Option} from "./Option";
 import {OptionGroup} from "./OptionGroup";
 
 
-export interface MultiselectProps extends Types.BluelibProps<HTMLSelectElement> {}
+export interface MultiselectProps extends Types.BluelibHTMLProps<HTMLSelectElement> {
+    onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
+    value?: string[],
+}
 
 
 export function Multiselect({...props}: MultiselectProps): JSX.Element {

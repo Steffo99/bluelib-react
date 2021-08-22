@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface ImageProps extends Types.BluelibProps<HTMLImageElement> {
+export interface ImageProps extends Types.BluelibHTMLProps<HTMLImageElement> {
     limit?: "full" | "half" | "quarter",
 }
 

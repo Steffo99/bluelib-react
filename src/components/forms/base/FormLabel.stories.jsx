@@ -1,12 +1,12 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import * as Decorators from "../../utils/Decorators"
+import * as Decorators from "../../../utils/Decorators"
 import { FormLabel as FormLabelComponent } from "./FormLabel"
 
 
 export default {
     component: FormLabelComponent,
-    title: "Forms/Form Label",
+    title: "Forms/Base/Form Label",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
 }
 

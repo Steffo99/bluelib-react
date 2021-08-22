@@ -6,7 +6,7 @@ import mergeClassNames from "classnames"
 import {Table} from "./Table";
 
 
-interface TableRowProps extends Types.BluelibProps<HTMLTableRowElement> {
+interface TableRowProps extends Types.BluelibHTMLProps<HTMLTableRowElement> {
     [props: string]: any,
 }
 

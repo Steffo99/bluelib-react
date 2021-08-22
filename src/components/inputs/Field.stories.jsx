@@ -8,6 +8,9 @@ export default {
     component: FieldComponent,
     title: "Inputs/Field",
     decorators: [Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "changed"},
+    },
 }
 
 

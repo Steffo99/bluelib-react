@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface ListTermProps extends Types.BluelibProps<HTMLElement> {}
+export interface ListTermProps extends Types.BluelibHTMLProps<HTMLElement> {}
 
 
 export function ListTerm({...props}: ListTermProps): JSX.Element {

@@ -7,7 +7,10 @@ import {Option} from "./Option"
 import {OptionGroup} from "./OptionGroup"
 
 
-export interface SelectProps extends Types.BluelibProps<HTMLSelectElement> {}
+export interface SelectProps extends Types.BluelibHTMLProps<HTMLSelectElement> {
+    onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
+    value?: string,
+}
 
 
 export function Select({...props}: SelectProps): JSX.Element {

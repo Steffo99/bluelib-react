@@ -19,7 +19,7 @@ const BuiltinThemes = {
 }
 
 
-export interface BluelibProps extends Types.BluelibProps<HTMLDivElement> {
+export interface BluelibProps extends Types.BluelibHTMLProps<HTMLDivElement> {
     theme: "paper" | "royalblue" | "hacker" | "sophon",
 
     backgroundColor?: typeof Color,

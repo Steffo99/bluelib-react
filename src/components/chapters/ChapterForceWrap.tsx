@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface ChapterForceWrapProps extends Types.BluelibProps<HTMLDivElement> {}
+export interface ChapterForceWrapProps extends Types.BluelibHTMLProps<HTMLDivElement> {}
 
 
 export function ChapterForceWrap({...props}: ChapterForceWrapProps): JSX.Element {

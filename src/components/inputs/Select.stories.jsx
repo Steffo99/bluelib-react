@@ -11,9 +11,7 @@ export default {
     title: "Inputs/Select",
     decorators: [Decorators.Bluelib],
     argTypes: {
-        customColor: {
-            control: {type: "color"},
-        },
+        onChange: {action: "changed"},
     },
 }
 

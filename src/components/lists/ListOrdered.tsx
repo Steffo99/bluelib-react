@@ -6,7 +6,7 @@ import mergeClassNames from "classnames"
 import {ListItem} from "./ListItem";
 
 
-export interface ListOrderedProps extends Types.BluelibProps<HTMLOListElement> {}
+export interface ListOrderedProps extends Types.BluelibHTMLProps<HTMLOListElement> {}
 
 
 export function ListOrdered({...props}: ListOrderedProps): JSX.Element {

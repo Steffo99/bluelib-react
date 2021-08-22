@@ -2,7 +2,6 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as Decorators from "../../utils/Decorators"
 import { Form as FormComponent } from "./Form"
-import { FormPair } from "./FormPair"
 
 
 export default {
@@ -13,8 +12,6 @@ export default {
 
 
 export const Form = props => (
-    <FormComponent {...props}>
-        <FormPair label={"Hello"} input={}/>
-    </FormComponent>
+    <FormComponent {...props}/>
 )
 Form.args = {}

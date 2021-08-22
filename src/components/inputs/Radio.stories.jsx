@@ -10,6 +10,9 @@ export default {
     component: RadioComponent,
     title: "Inputs/Radio",
     decorators: [Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "changed"},
+    },
 }
 
 

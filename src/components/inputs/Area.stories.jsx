@@ -8,6 +8,9 @@ export default {
     component: AreaComponent,
     title: "Inputs/Area",
     decorators: [Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "changed"},
+    },
 }
 
 

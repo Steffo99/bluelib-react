@@ -10,6 +10,9 @@ export default {
     component: CheckboxComponent,
     title: "Inputs/Checkbox",
     decorators: [Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "changed"},
+    },
 }
 
 

@@ -5,10 +5,13 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface CheckboxProps extends Types.BluelibProps<HTMLInputElement> {}
+export interface CheckboxProps extends Types.BluelibHTMLProps<HTMLInputElement> {
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
+    checked?: boolean,
+}
 
 
-export function Checkbox({onChange, ...props}: CheckboxProps): JSX.Element {
+export function Checkbox({...props}: CheckboxProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input", "input-checkbox")
 
     return (

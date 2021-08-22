@@ -7,7 +7,7 @@ import mergeClassNames from "classnames"
 
 
 
-interface TableBodyProps extends Types.BluelibProps<HTMLTableSectionElement> {}
+interface TableBodyProps extends Types.BluelibHTMLProps<HTMLTableSectionElement> {}
 
 
 export function TableBody({...props}: TableBodyProps): JSX.Element {

@@ -11,6 +11,9 @@ export default {
     subcomponents: {Option, OptionGroup},
     title: "Inputs/Multiselect",
     decorators: [Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "changed"},
+    },
 }
 
 

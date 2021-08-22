@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import * as Decorators from "../../utils/Decorators"
+import * as Decorators from "../../../utils/Decorators"
 import { FormPair as FormPairComponent } from "./FormPair"
 import { FormLabel } from "./FormLabel"
 import { FormGroup } from "./FormGroup"
@@ -8,7 +8,7 @@ import { FormGroup } from "./FormGroup"
 
 export default {
     component: FormPairComponent,
-    title: "Forms/Form Pair",
+    title: "Forms/Base/Form Pair",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
 }
 

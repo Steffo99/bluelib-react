@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface LayoutThreeColCenterProps extends Types.BluelibProps<HTMLDivElement> {}
+export interface LayoutThreeColCenterProps extends Types.BluelibHTMLProps<HTMLDivElement> {}
 
 
 export function LayoutThreeColCenter({...props}: LayoutThreeColCenterProps): JSX.Element {

@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface BaseLayoutProps extends Types.BluelibProps<HTMLDivElement> {}
+export interface BaseLayoutProps extends Types.BluelibHTMLProps<HTMLDivElement> {}
 
 
 export function BaseLayout({...props}: BaseLayoutProps): JSX.Element {

@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface FormProps extends Types.BluelibProps<HTMLFormElement> {}
+export interface FormProps extends Types.BluelibHTMLProps<HTMLFormElement> {}
 
 
 export function Form({...props}: FormProps): JSX.Element {

@@ -5,10 +5,13 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface AreaProps extends Types.BluelibProps<HTMLTextAreaElement> {}
+export interface AreaProps extends Types.BluelibHTMLProps<HTMLTextAreaElement> {
+    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
+    value?: string,
+}
 
 
-export function Area({onChange, ...props}: AreaProps): JSX.Element {
+export function Area({...props}: AreaProps): JSX.Element {
     props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "input", "input-area")
 
     return (

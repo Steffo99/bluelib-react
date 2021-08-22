@@ -5,7 +5,7 @@ import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 
 
-export interface LayoutFillSingleProps extends Types.BluelibProps<HTMLDivElement> {}
+export interface LayoutFillSingleProps extends Types.BluelibHTMLProps<HTMLDivElement> {}
 
 
 export function LayoutFillSingle({...props}: LayoutFillSingleProps): JSX.Element {

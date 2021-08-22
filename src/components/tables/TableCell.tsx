@@ -6,7 +6,7 @@ import mergeClassNames from "classnames"
 import {Table} from "./Table";
 
 
-interface TableCellProps extends Types.BluelibProps<HTMLTableCellElement> {
+interface TableCellProps extends Types.BluelibHTMLProps<HTMLTableCellElement> {
     head?: boolean,
     mark?: boolean,
 
