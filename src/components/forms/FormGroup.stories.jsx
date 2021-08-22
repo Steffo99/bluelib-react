@@ -1,17 +1,19 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as Decorators from "../../utils/Decorators"
-import { FormGroup } from "./FormGroup"
+import { FormGroup as FormGroupComponent } from "./FormGroup"
 
 
 export default {
-    component: FormGroup,
-    title: "FormGroup",
-    decorators: [Decorators.Bluelib],
+    component: FormGroupComponent,
+    title: "Forms/Form Group",
+    decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
 }
 
 
-export const Default = props => (
-    <FormGroup {...props}/>
+export const FormGroup = props => (
+    <FormGroupComponent {...props}>
+        Inputs go here
+    </FormGroupComponent>
 )
-Default.args = {}
+FormGroup.args = {}

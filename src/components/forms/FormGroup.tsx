@@ -3,24 +3,15 @@ import * as ReactDOM from "react-dom"
 import * as Types from "../../types"
 import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
-import {FormSlot} from "./FormSlot";
 
 
-interface FormGroupProps {
-    label: string,
-
-    children: React.ReactNode,
-
-    [props: string]: any,
-}
+export interface FormGroupProps extends Types.BluelibProps<HTMLDivElement> {}
 
 
-export function FormGroup({label, children, ...props}: FormGroupProps): JSX.Element {
+export function FormGroup({...props}: FormGroupProps): JSX.Element {
+    props.bluelibClassNames = mergeClassNames(props.bluelibClassNames, "form-group")
+
     return (
-        <FormSlot label={label} {...props}>
-            <BaseElement kind={"div"} bluelibClassNames={"form-group"}>
-                {children}
-            </BaseElement>
-        </FormSlot>
+        <BaseElement kind={"div"} {...props}/>
     )
 }

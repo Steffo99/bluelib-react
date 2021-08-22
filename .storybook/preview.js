@@ -14,6 +14,10 @@ export const parameters = {
             type: "color",
             description: "Apply a Bluelib custom color to the element",
         },
+        disabled: {
+            type: "boolean",
+            description: "Apply the disabled status to an element",
+        }
     },
     args: {
         disabled: false,
