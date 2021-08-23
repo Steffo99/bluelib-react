@@ -18,6 +18,6 @@ export function Button({onClick, disabled, children, ...props}: ButtonProps): JS
     const onClickWrapped = disabled ? () => {} : onClick
 
     return (
-        <BaseElement kind={"button"} onClick={onClickWrapped} disabled={disabled} {...props}>{children}</BaseElement>
+        <BaseElement kind={"button"} type={"button"} onClick={onClickWrapped} disabled={disabled} {...props}>{children}</BaseElement>
     )
 }
