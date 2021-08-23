@@ -7,7 +7,7 @@ import {FormPair, FormPairProps} from "./FormPair";
 import {FormLabel, FormLabelProps} from "./FormLabel";
 import {FormGroup, FormGroupProps} from "./FormGroup";
 import {Radio} from "../inputs/Radio";
-import {LabelledRadio} from "../inputs/LabelledRadio";
+import {LabelledRadio, LabelledRadioProps} from "../inputs/LabelledRadio";
 
 
 
@@ -25,15 +25,16 @@ export interface FormRadioGroupProps {
     pairProps?: FormPairProps,
     labelProps?: FormLabelProps,
     groupProps?: FormGroupProps,
+    radioProps?: LabelledRadioProps,
 }
 
 
-export function FormRadioGroup({name, label, options, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps}: FormRadioGroupProps): JSX.Element {
+export function FormRadioGroup({name, label, options, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, radioProps}: FormRadioGroupProps): JSX.Element {
     if(!name) {
         name = UUID.v4()
     }
 
-    const radios = options.map<JSX.Element>(option => <LabelledRadio label={option} value={option} name={name}/>)
+    const radios = options.map<JSX.Element>(option => <LabelledRadio label={option} value={option} name={name} {...radioProps}/>)
 
     const onChangeWrapped = React.useCallback(
         event => {
