@@ -4,23 +4,20 @@ import { Bluelib } from "../src/components/Bluelib"
 export const parameters = {
     argTypes: {
         bluelibClassNames: {
-            type: "string",
+            control: {type: "string"},
             description: "Additional Bluelib classNames to be appended to the element's classNames",
-            table: {category: "Bluelib"}
+            table: {category: "Global props"}
         },
         customColor: {
-            type: "color",
+            control: {type: "color"},
             description: "Apply a Bluelib custom color to the element",
-            table: {category: "Bluelib"}
+            table: {category: "Global props"}
         },
         disabled: {
-            type: "boolean",
+            control: {type: "boolean"},
             description: "Apply the disabled status to an element",
-            table: {category: "Bluelib"}
+            table: {category: "Global props"}
         }
-    },
-    args: {
-        disabled: false,
     },
     options: {
         storySort: {
