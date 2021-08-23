@@ -14,9 +14,11 @@ export interface FormCheckboxGroupProps {
     label: string,
     options: string[],
 
+    row?: boolean,
+
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
     onSimpleChange?: (value: string[]) => void,
-    value: string[],
+    value?: string[],
 
     validity?: Types.Validity,
 
@@ -27,7 +29,7 @@ export interface FormCheckboxGroupProps {
 }
 
 
-export function FormCheckboxGroup({name, label, options, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, checkboxProps}: FormCheckboxGroupProps): JSX.Element {
+export function FormCheckboxGroup({name, label, options, row, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, checkboxProps}: FormCheckboxGroupProps): JSX.Element {
     if(!name) {
         name = UUID.v4()
     }
@@ -36,6 +38,7 @@ export function FormCheckboxGroup({name, label, options, onChange, onSimpleChang
         <LabelledCheckbox
             label={option}
             value={option}
+            row={row}
             checked={value ? value.includes(option) : undefined}
             name={name}
             {...checkboxProps}

@@ -16,9 +16,11 @@ export interface FormRadioGroupProps {
     label: string,
     options: string[],
 
+    row?: boolean,
+
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
     onSimpleChange?: (value: string) => void,
-    value: string,
+    value?: string,
 
     validity?: Types.Validity,
 
@@ -29,12 +31,21 @@ export interface FormRadioGroupProps {
 }
 
 
-export function FormRadioGroup({name, label, options, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, radioProps}: FormRadioGroupProps): JSX.Element {
+export function FormRadioGroup({name, label, options, row, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, radioProps}: FormRadioGroupProps): JSX.Element {
     if(!name) {
         name = UUID.v4()
     }
 
-    const radios = options.map<JSX.Element>(option => <LabelledRadio label={option} value={option} name={name} {...radioProps}/>)
+    const radios = options.map<JSX.Element>(option => (
+        <LabelledRadio
+            label={option}
+            value={option}
+            row={row}
+            checked={value ? value === option : undefined}
+            name={name}
+            {...radioProps}
+        />
+    ))
 
     const onChangeWrapped = React.useCallback(
         event => {

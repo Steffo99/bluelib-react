@@ -22,6 +22,7 @@ Unmanaged.args = {
     label: "Sizes",
     options: ["XS", "S", "M", "L", "XL"],
     value: undefined,
+    row: false,
 }
 
 

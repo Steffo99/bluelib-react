@@ -10,6 +10,7 @@ import {Field, FieldProps} from "../inputs/Field";
 
 export interface FormFieldProps {
     label: string,
+    type?: string,
 
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
     onSimpleChange?: (value: string) => void,
@@ -23,11 +24,11 @@ export interface FormFieldProps {
 }
 
 
-export function FormField({label, onChange, onSimpleChange, value, validity, pairProps, labelProps, inputProps}: FormFieldProps): JSX.Element {
+export function FormField({label, type="text", onChange, onSimpleChange, value, validity, pairProps, labelProps, inputProps}: FormFieldProps): JSX.Element {
     return (
         <FormPair
             label={<FormLabel {...labelProps}>{label}</FormLabel>}
-            input={<Field onChange={onChange} onSimpleChange={onSimpleChange} value={value} {...inputProps}/>}
+            input={<Field type={type} onChange={onChange} onSimpleChange={onSimpleChange} value={value} {...inputProps}/>}
             validity={validity}
             {...pairProps}
         />

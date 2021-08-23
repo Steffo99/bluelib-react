@@ -20,5 +20,6 @@ export const FormRadioGroup = props => (
 )
 FormRadioGroup.args = {
     label: "Size",
-    options: ["XS", "S", "M", "L", "XL"]
+    options: ["XS", "S", "M", "L", "XL"],
+    row: false,
 }

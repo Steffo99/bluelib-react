@@ -10,10 +10,13 @@ import {InputLabel, InputLabelProps} from "./InputLabel";
 export interface LabelledRadioProps extends RadioProps {
     label: string,
     labelProps?: InputLabelProps,
+    row?: boolean,
 }
 
 
-export function LabelledRadio({label, labelProps, ...props}: LabelledRadioProps): JSX.Element {
+export function LabelledRadio({label, labelProps = {}, row, ...props}: LabelledRadioProps): JSX.Element {
+    labelProps.bluelibClassNames = mergeClassNames(props.bluelibClassNames, row ? "form-group-row": "")
+
     return (
         <InputLabel {...labelProps}>
             <Radio {...props}/>

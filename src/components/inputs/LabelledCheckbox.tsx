@@ -10,10 +10,13 @@ import {Checkbox, CheckboxProps} from "./Checkbox";
 export interface LabelledCheckboxProps extends CheckboxProps {
     label: string,
     labelProps?: InputLabelProps,
+    row?: boolean,
 }
 
 
-export function LabelledCheckbox({label, labelProps, ...props}: LabelledCheckboxProps): JSX.Element {
+export function LabelledCheckbox({label, labelProps = {}, row, ...props}: LabelledCheckboxProps): JSX.Element {
+    labelProps.bluelibClassNames = mergeClassNames(props.bluelibClassNames, row ? "form-group-row": "")
+
     return (
         <InputLabel {...labelProps}>
             <Checkbox {...props}/>
