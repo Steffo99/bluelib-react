@@ -9,6 +9,9 @@ import { Option } from "../inputs/Option"
 import { FormMultiselect } from "./FormMultiselect"
 import { FormRadioGroup } from "./FormRadioGroup"
 import { FormCheckboxGroup } from "./FormCheckboxGroup"
+import { FormRow } from "./FormRow"
+import { Button } from "../inputs/Button"
+import { Parenthesis } from "../panels/Parenthesis"
 
 
 export default {
@@ -22,32 +25,31 @@ export const Form = props => (
     <FormComponent {...props}>
         <FormField label={"Username"}/>
         <FormField label={"Password"} type={"password"}/>
-        <FormArea label={"Bio"}/>
+        <FormRow>
+            <Parenthesis>Enter the details of your characters below.</Parenthesis>
+        </FormRow>
+        <FormField label={"Name"}/>
+        <FormArea label={"Backstory"}/>
         <FormSelect label={"Gender"}>
             <Option value={"Male"}/>
             <Option value={"Female"}/>
             <Option value={"Non-binary"}/>
-            <Option value={"Other"}/>
-            <Option value={"Don't want to say"}/>
         </FormSelect>
-        <FormMultiselect label={"Favourite colors"}>
-            <Option value={"Red"}/>
-            <Option value={"Orange"}/>
-            <Option value={"Yellow"}/>
-            <Option value={"Green"}/>
-            <Option value={"Cyan"}/>
-            <Option value={"Blue"}/>
-            <Option value={"Purple"}/>
-            <Option value={"White"}/>
-            <Option value={"Black"}/>
-            <Option value={"Grey"}/>
-        </FormMultiselect>
-        <FormRadioGroup label={"Alignment"} options={[
-            "Good",
+        {/* TODO: This doesn't work properly */}
+        <FormField label={"Level"} type={"number"} min={1} max={20}/>
+        <FormRadioGroup label={"Alignment"} row={true} options={[
+            "Lawful good",
+            "Lawful neutral",
+            "Lawful evil",
+            "Neutral good",
             "Neutral",
-            "Evil"
+            "Neutral evil",
+            "Chaotic good",
+            "Chaotic neutral",
+            "Chaotic evil",
+            "Other",
         ]}/>
-        <FormCheckboxGroup label={"Classes"} row={true} options={[
+        <FormCheckboxGroup label={"Classes"} row={false} options={[
             "Artificer",
             "Barbarian",
             "Bard",
@@ -62,6 +64,11 @@ export const Form = props => (
             "Warlock",
             "Wizard",
         ]}/>
+        <FormRow>
+            <Button>Throw fireball</Button>
+            <Button>Shoot a magic missile</Button>
+            <Button>Save character</Button>
+        </FormRow>
     </FormComponent>
 )
 Form.args = {}
