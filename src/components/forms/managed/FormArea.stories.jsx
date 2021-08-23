@@ -8,10 +8,16 @@ export default {
     component: FormAreaComponent,
     title: "Forms/Managed/Form Area",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
+    },
 }
 
 
 export const FormArea = props => (
-    <FormAreaComponent label={"Bio"} {...props}/>
+    <FormAreaComponent {...props}/>
 )
-FormArea.args = {}
+FormArea.args = {
+    label: "Bio",
+}

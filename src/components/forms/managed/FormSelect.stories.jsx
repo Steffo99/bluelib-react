@@ -9,14 +9,20 @@ export default {
     component: FormSelectComponent,
     title: "Forms/Managed/Form Select",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
+    },
 }
 
 
 export const FormSelect = props => (
-    <FormSelectComponent label={"Ready check"} {...props}>
+    <FormSelectComponent {...props}>
         <Option value={"I'm ready!"}/>
         <Option value={"Please wait..."}/>
         <Option value={"I won't be there."}/>
     </FormSelectComponent>
 )
-FormSelect.args = {}
+FormSelect.args = {
+    label: "Ready check",
+}

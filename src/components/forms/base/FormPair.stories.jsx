@@ -13,10 +13,12 @@ export default {
 }
 
 
-export const FormPair = () => (
+export const FormPair = (props) => (
     <FormPairComponent
         label={<FormLabel>Gender</FormLabel>}
         input={<FormGroup>Choices go here</FormGroup>}
+        {...props}
     />
 )
-FormPair.args = {}
+FormPair.args = {
+}

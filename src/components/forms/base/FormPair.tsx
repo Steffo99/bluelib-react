@@ -8,25 +8,53 @@ import {FormLabel} from "./FormLabel";
 import {FormGroup} from "./FormGroup";
 
 
-export interface FormPairProps {
-    label: React.ReactNode,
-    input: React.ReactNode,
+export interface FormPairProps extends Types.BluelibProps {
+    label: JSX.Element,
+    input: JSX.Element,
+    // Validity is in the form pair so it can be propagated to both the label and the group
+    validity?: Types.Validity,
     id?: string,
-    group?: boolean,
 }
 
 
-export function FormPair({id, label, input, group = false}: FormPairProps): JSX.Element {
+export function FormPair({id, label, input, validity, bluelibClassNames, customColor, disabled}: FormPairProps): JSX.Element {
     if(!id) {
         id = UUID.v4()
     }
 
-    if(group) {
-        input = <FormGroup>{input}</FormGroup>
+    let validityClass
+    // If the input is valid
+    if(validity === true) {
+        validityClass = "color-lime"
+    }
+    // If the input is invalid
+    else if(validity === false) {
+        validityClass = "color-red"
+    }
+    // If the input has no validity
+    else if(validity === null) {
+        validityClass = ""
+    }
+    // If no validity has been passed
+    else {
+        validityClass = ""
     }
 
+    label = React.cloneElement(label, {
+        htmlFor: id,
+        bluelibClassNames: mergeClassNames(bluelibClassNames, validityClass),
+        customColor: customColor,
+    })
+
+    input = React.cloneElement(input, {
+        id: id,
+        bluelibClassNames: mergeClassNames(bluelibClassNames, validityClass),
+        customColor: customColor,
+        disabled: disabled,
+    })
+
     return <>
-        <FormLabel htmlFor={id}>{label}</FormLabel>
+        {label}
         {input}
     </>
 }

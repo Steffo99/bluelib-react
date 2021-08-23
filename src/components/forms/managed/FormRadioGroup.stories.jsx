@@ -1,12 +1,12 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as Decorators from "../../../utils/Decorators"
-import { FormField as FormFieldComponent } from "./FormField"
+import { FormRadioGroup as FormRadioGroupComponent } from "./FormRadioGroup"
 
 
 export default {
-    component: FormFieldComponent,
-    title: "Forms/Managed/Form Field",
+    component: FormRadioGroupComponent,
+    title: "Forms/Managed/Form Radio Group",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
     argTypes: {
         onChange: {action: "Change"},
@@ -15,9 +15,10 @@ export default {
 }
 
 
-export const FormField = props => (
-    <FormFieldComponent {...props}/>
+export const FormRadioGroup = props => (
+    <FormRadioGroupComponent {...props}/>
 )
-FormField.args = {
-    label: "Username",
+FormRadioGroup.args = {
+    label: "Size",
+    options: ["XS", "S", "M", "L", "XL"]
 }

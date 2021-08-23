@@ -9,11 +9,15 @@ export default {
     component: FormMultiselectComponent,
     title: "Forms/Managed/Form Multiselect",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
+    argTypes: {
+        onChange: {action: "Change"},
+        onSimpleChange: {action: "SimpleChange"},
+    },
 }
 
 
 export const FormMultiselect = props => (
-    <FormMultiselectComponent label={"Favourite colors"} {...props}>
+    <FormMultiselectComponent {...props}>
         <Option value={"Red"}/>
         <Option value={"Orange"}/>
         <Option value={"Yellow"}/>
@@ -26,4 +30,6 @@ export const FormMultiselect = props => (
         <Option value={"Grey"}/>
     </FormMultiselectComponent>
 )
-FormMultiselect.args = {}
+FormMultiselect.args = {
+    label: "Favourite colors",
+}
