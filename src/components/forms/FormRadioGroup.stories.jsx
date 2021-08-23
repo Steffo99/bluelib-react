@@ -22,4 +22,5 @@ FormRadioGroup.args = {
     label: "Size",
     options: ["XS", "S", "M", "L", "XL"],
     row: false,
+    disabled: false,
 }

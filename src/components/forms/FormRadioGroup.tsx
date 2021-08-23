@@ -11,7 +11,7 @@ import {LabelledRadio, LabelledRadioProps} from "../inputs/LabelledRadio";
 
 
 
-export interface FormRadioGroupProps {
+export interface FormRadioGroupProps extends Types.BluelibProps {
     name?: string,
     label: string,
     options: string[],
@@ -31,7 +31,7 @@ export interface FormRadioGroupProps {
 }
 
 
-export function FormRadioGroup({name, label, options, row, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, radioProps}: FormRadioGroupProps): JSX.Element {
+export function FormRadioGroup({name, label, options, row, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, radioProps, disabled, bluelibClassNames, customColor}: FormRadioGroupProps): JSX.Element {
     if(!name) {
         name = UUID.v4()
     }
@@ -43,6 +43,7 @@ export function FormRadioGroup({name, label, options, row, onChange, onSimpleCha
             row={row}
             checked={value ? value === option : undefined}
             name={name}
+            disabled={disabled}
             {...radioProps}
         />
     ))
@@ -66,6 +67,8 @@ export function FormRadioGroup({name, label, options, row, onChange, onSimpleCha
             label={<FormLabel {...labelProps}>{label}</FormLabel>}
             input={group}
             validity={validity}
+            bluelibClassNames={bluelibClassNames}
+            customColor={customColor}
             {...pairProps}
         />
     )

@@ -23,6 +23,7 @@ Unmanaged.args = {
     options: ["XS", "S", "M", "L", "XL"],
     value: undefined,
     row: false,
+    disabled: false,
 }
 
 

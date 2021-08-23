@@ -9,7 +9,7 @@ import {FormGroup, FormGroupProps} from "./FormGroup";
 import {LabelledCheckbox, LabelledCheckboxProps} from "../inputs/LabelledCheckbox";
 
 
-export interface FormCheckboxGroupProps {
+export interface FormCheckboxGroupProps extends Types.BluelibProps {
     name?: string,
     label: string,
     options: string[],
@@ -29,7 +29,7 @@ export interface FormCheckboxGroupProps {
 }
 
 
-export function FormCheckboxGroup({name, label, options, row, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, checkboxProps}: FormCheckboxGroupProps): JSX.Element {
+export function FormCheckboxGroup({name, label, options, row, onChange, onSimpleChange, value, validity, pairProps, labelProps, groupProps, checkboxProps, disabled, bluelibClassNames, customColor}: FormCheckboxGroupProps): JSX.Element {
     if(!name) {
         name = UUID.v4()
     }
@@ -41,6 +41,7 @@ export function FormCheckboxGroup({name, label, options, row, onChange, onSimple
             row={row}
             checked={value ? value.includes(option) : undefined}
             name={name}
+            disabled={disabled}
             {...checkboxProps}
         />
     ))
@@ -74,6 +75,8 @@ export function FormCheckboxGroup({name, label, options, row, onChange, onSimple
             label={<FormLabel {...labelProps}>{label}</FormLabel>}
             input={group}
             validity={validity}
+            bluelibClassNames={bluelibClassNames}
+            customColor={customColor}
             {...pairProps}
         />
     )
