@@ -1,8 +1,8 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as UUID from "uuid"
-import * as Types from "../../../types"
-import {BaseElement} from "../../BaseElement"
+import * as Types from "../../types"
+import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
 import {FormLabel} from "./FormLabel";
 import {FormGroup} from "./FormGroup";

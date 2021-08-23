@@ -1,13 +1,13 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import * as Decorators from "../../../utils/Decorators"
+import * as Decorators from "../../utils/Decorators"
 import { FormMultiselect as FormMultiselectComponent } from "./FormMultiselect"
-import { Option } from "../../inputs/Option"
+import { Option } from "../inputs/Option"
 
 
 export default {
     component: FormMultiselectComponent,
-    title: "Forms/Managed/Form Multiselect",
+    title: "Forms/Form Multiselect",
     decorators: [Decorators.Form, Decorators.Box, Decorators.Bluelib],
     argTypes: {
         onChange: {action: "Change"},

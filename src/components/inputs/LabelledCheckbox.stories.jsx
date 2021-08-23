@@ -1,12 +1,12 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import * as Decorators from "../../utils/Decorators"
-import { LabelledRadio as LabelledRadioComponent } from "./LabelledRadio"
+import { LabelledCheckbox as LabelledCheckboxComponent } from "./LabelledCheckbox"
 
 
 export default {
-    component: LabelledRadioComponent,
-    title: "Inputs/Labelled Radio",
+    component: LabelledCheckboxComponent,
+    title: "Inputs/Labelled Checkbox",
     decorators: [Decorators.Bluelib],
     argTypes: {
         onChange: {action: "Change"},
@@ -15,10 +15,10 @@ export default {
 }
 
 
-export const LabelledRadio = props => (
-    <LabelledRadioComponent {...props}/>
+export const LabelledCheckbox = props => (
+    <LabelledCheckboxComponent {...props}/>
 )
-LabelledRadio.args = {
+LabelledCheckbox.args = {
     label: "This",
     name: "what",
     value: "this",

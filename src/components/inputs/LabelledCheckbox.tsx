@@ -3,20 +3,20 @@ import * as ReactDOM from "react-dom"
 import * as Types from "../../types"
 import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
-import {Radio, RadioProps} from "./Radio";
 import {InputLabel, InputLabelProps} from "./InputLabel";
+import {Checkbox, CheckboxProps} from "./Checkbox";
 
 
-export interface LabelledRadioProps extends RadioProps {
+export interface LabelledCheckboxProps extends CheckboxProps {
     label: string,
     labelProps?: InputLabelProps,
 }
 
 
-export function LabelledRadio({label, labelProps, ...props}: LabelledRadioProps): JSX.Element {
+export function LabelledCheckbox({label, labelProps, ...props}: LabelledCheckboxProps): JSX.Element {
     return (
         <InputLabel {...labelProps}>
-            <Radio {...props}/>
+            <Checkbox {...props}/>
             &nbsp;{label}
         </InputLabel>
     )

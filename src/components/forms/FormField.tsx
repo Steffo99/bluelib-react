@@ -1,11 +1,11 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import * as Types from "../../../types"
-import {BaseElement} from "../../BaseElement"
+import * as Types from "../../types"
+import {BaseElement} from "../BaseElement"
 import mergeClassNames from "classnames"
-import {FormPair, FormPairProps} from "../base/FormPair";
-import {FormLabel, FormLabelProps} from "../base/FormLabel";
-import {Field, FieldProps} from "../../inputs/Field";
+import {FormPair, FormPairProps} from "./FormPair";
+import {FormLabel, FormLabelProps} from "./FormLabel";
+import {Field, FieldProps} from "../inputs/Field";
 
 
 export interface FormFieldProps {
