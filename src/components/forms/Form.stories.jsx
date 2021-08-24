@@ -16,6 +16,7 @@ import { Parenthesis } from "../panels/Parenthesis"
 
 export default {
     component: FormComponent,
+    subcomponents: {FormField, FormRow, FormArea, FormSelect, FormRadioGroup, FormCheckboxGroup, Parenthesis, Option, Button},
     title: "Forms/Form",
     decorators: [Decorators.Box, Decorators.Bluelib],
 }
@@ -23,21 +24,20 @@ export default {
 
 export const Form = props => (
     <FormComponent {...props}>
-        <FormField label={"Username"}/>
-        <FormField label={"Password"} type={"password"}/>
-        <FormRow>
+        <FormComponent.Field label={"Username"}/>
+        <FormComponent.Field label={"Password"} type={"password"}/>
+        <FormComponent.Row>
             <Parenthesis>Enter the details of your characters below.</Parenthesis>
-        </FormRow>
-        <FormField label={"Name"}/>
-        <FormArea label={"Backstory"}/>
-        <FormSelect label={"Gender"}>
-            <Option value={"Male"}/>
-            <Option value={"Female"}/>
-            <Option value={"Non-binary"}/>
-        </FormSelect>
-        {/* TODO: This doesn't work properly */}
-        <FormField label={"Level"} type={"number"} min={1} max={20}/>
-        <FormRadioGroup label={"Alignment"} row={true} options={[
+        </FormComponent.Row>
+        <FormComponent.Field label={"Name"}/>
+        <FormComponent.Area label={"Backstory"}/>
+        <FormComponent.Select label={"Gender"}>
+            <FormComponent.Select.Option value={"Male"}/>
+            <FormComponent.Select.Option value={"Female"}/>
+            <FormComponent.Select.Option value={"Non-binary"}/>
+        </FormComponent.Select>
+        <FormComponent.Field label={"Level"} type={"number"} min={1} max={20}/>
+        <FormComponent.Radios label={"Alignment"} row={true} options={[
             "Lawful good",
             "Lawful neutral",
             "Lawful evil",
@@ -49,7 +49,7 @@ export const Form = props => (
             "Chaotic evil",
             "Other",
         ]}/>
-        <FormCheckboxGroup label={"Classes"} row={false} options={[
+        <FormComponent.Checkboxes label={"Classes"} row={false} options={[
             "Artificer",
             "Barbarian",
             "Bard",
@@ -64,11 +64,11 @@ export const Form = props => (
             "Warlock",
             "Wizard",
         ]}/>
-        <FormRow>
-            <Button>Throw fireball</Button>
-            <Button>Shoot a magic missile</Button>
-            <Button>Save character</Button>
-        </FormRow>
+        <FormComponent.Row>
+            <FormComponent.Button>Throw fireball</FormComponent.Button>
+            <FormComponent.Button>Shoot a magic missile</FormComponent.Button>
+            <FormComponent.Button>Save character</FormComponent.Button>
+        </FormComponent.Row>
     </FormComponent>
 )
 Form.args = {}

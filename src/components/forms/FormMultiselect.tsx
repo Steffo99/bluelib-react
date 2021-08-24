@@ -8,30 +8,26 @@ import {FormLabel, FormLabelProps} from "./FormLabel";
 import {Multiselect, MultiselectProps} from "../inputs/Multiselect";
 
 
-export interface FormMultiselectProps {
+export interface FormMultiselectProps extends MultiselectProps {
     label: string,
-
-    onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
-    onSimpleChange?: (value: string[]) => void,
-    value?: string[],
 
     validity?: Types.Validity,
 
     pairProps?: FormPairProps,
     labelProps?: FormLabelProps,
-    inputProps?: MultiselectProps,
-
-    children?: React.ReactNode,
 }
 
 
-export function FormMultiselect({label, onChange, onSimpleChange, value, validity, pairProps, labelProps, inputProps, children}: FormMultiselectProps): JSX.Element {
+export function FormMultiselect({label, validity, pairProps, labelProps, ...props}: FormMultiselectProps): JSX.Element {
     return (
         <FormPair
             label={<FormLabel {...labelProps}>{label}</FormLabel>}
-            input={<Multiselect onChange={onChange} onSimpleChange={onSimpleChange} value={value} {...inputProps}>{children}</Multiselect>}
+            input={<Multiselect {...props}/>}
             validity={validity}
             {...pairProps}
         />
     )
 }
+
+
+FormMultiselect.Option = Multiselect.Option

@@ -8,26 +8,21 @@ import {FormLabel, FormLabelProps} from "./FormLabel";
 import {Area, AreaProps} from "../inputs/Area";
 
 
-export interface FormAreaProps {
+export interface FormAreaProps extends AreaProps {
     label: string,
-
-    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void,
-    onSimpleChange?: (value: string) => void,
-    value?: string,
 
     validity?: Types.Validity,
 
     pairProps?: FormPairProps,
     labelProps?: FormLabelProps,
-    inputProps?: AreaProps,
 }
 
 
-export function FormArea({label, onChange, onSimpleChange, value, validity, pairProps, labelProps, inputProps}: FormAreaProps): JSX.Element {
+export function FormArea({label, validity, pairProps, labelProps, ...props}: FormAreaProps): JSX.Element {
     return (
         <FormPair
             label={<FormLabel {...labelProps}>{label}</FormLabel>}
-            input={<Area onChange={onChange} onSimpleChange={onSimpleChange} value={value} {...inputProps}/>}
+            input={<Area {...props}/>}
             validity={validity}
             {...pairProps}
         />

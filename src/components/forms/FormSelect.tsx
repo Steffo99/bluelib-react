@@ -8,30 +8,25 @@ import {FormLabel, FormLabelProps} from "./FormLabel";
 import {Select, SelectProps} from "../inputs/Select";
 
 
-export interface FormSelectProps {
+export interface FormSelectProps extends SelectProps {
     label: string,
-
-    onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void,
-    onSimpleChange?: (value: string) => void,
-    value?: string,
 
     validity?: Types.Validity,
 
     pairProps?: FormPairProps,
     labelProps?: FormLabelProps,
-    inputProps?: SelectProps,
-
-    children?: React.ReactNode,
 }
 
 
-export function FormSelect({label, onChange, onSimpleChange, value, validity, pairProps, labelProps, inputProps, children}: FormSelectProps): JSX.Element {
+export function FormSelect({label, validity, pairProps, labelProps, ...props}: FormSelectProps): JSX.Element {
     return (
         <FormPair
             label={<FormLabel {...labelProps}>{label}</FormLabel>}
-            input={<Select onChange={onChange} onSimpleChange={onSimpleChange} value={value} {...inputProps}>{children}</Select>}
+            input={<Select {...props}/>}
             validity={validity}
             {...pairProps}
         />
     )
 }
+
+FormSelect.Option = Select.Option
