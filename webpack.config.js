@@ -3,7 +3,7 @@ const path = require("path")
 
 module.exports = {
     // Mode: setting this to development preconfigure webpack with some defaults
-    mode: "development",
+    mode: "production",
 
     // Loaders: these allow various non-js filetypes to be imported
     module: {
@@ -62,7 +62,15 @@ module.exports = {
     resolve: {
         // These extensions should be loaded from the source code
         extensions: [".tsx", ".ts", ".jsx", ".js"],
+    },
 
+    // Externals: these are the dependencies of the bundle
+    externals: {
+        "classnames": "commonjs classnames",
+        "color": "commonjs color",
+        "uuid": "commonjs uuid",
+        "react": "commonjs react",
+        "react-dom": "commonjs react-dom"
     },
 
     // Input: this is the source root file
@@ -75,5 +83,5 @@ module.exports = {
     },
 
     // Devtools: display source maps
-    devtool: "inline-source-map",
+    // devtool: "inline-source-map",
 }
