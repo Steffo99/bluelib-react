@@ -58,9 +58,11 @@ module.exports = {
         ],
     },
 
-    // Resolve: allow these file types to be imported
+    // Resolve: how files should be imported
     resolve: {
+        // These extensions should be loaded from the source code
         extensions: [".tsx", ".ts", ".jsx", ".js"],
+
     },
 
     // Input: this is the source root file
