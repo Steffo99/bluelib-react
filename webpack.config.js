@@ -79,7 +79,14 @@ module.exports = {
     // Output: this is what webpack should build
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "bluelib-react.umd.js",
+        library: {
+            name: "bluelib-react",
+            type: "umd",
+        },
+        // WHY?!
+        // https://stackoverflow.com/a/64639975/4334568
+        globalObject: 'this',
     },
 
     // Devtools: display source maps

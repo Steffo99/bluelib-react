@@ -27,11 +27,11 @@
     "dependencies": {
         "classnames": "^2.3.1",
         "color": "https://github.com/Steffo99/color",
-        "uuid": "^8.3.2",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "uuid": "^8.3.2"
     },
     "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
     },
     "devDependencies": {
         "@babel/core": "^7.15.0",
@@ -58,6 +58,8 @@
         "@types/react-dom": "^17.0.0",
         "@types/uuid": "^8.3.1",
         "babel-loader": "^8.1.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
         "react-scripts": "4.0.3",
         "typescript": "^4.1.2",
         "webpack": "^5.51.1",
@@ -66,8 +68,12 @@
     "resolutions": {
         "babel-loader": "8.1.0"
     },
+    "files": [
+        "dist/bluelib-react.umd.js"
+    ],
+    "main": "dist/bluelib-react.umd.js",
     "scripts": {
-        "cra:eject": "react-scripts eject",
+        "package:build": "webpack",
         "storybook:start": "start-storybook -p 30060 -s public",
         "storybook:build": "build-storybook -s public",
         "storybook:deploy": "storybook-to-ghpages"
