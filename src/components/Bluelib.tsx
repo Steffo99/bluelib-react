@@ -38,6 +38,7 @@ export interface BluelibProps extends Types.BluelibHTMLProps<HTMLDivElement> {
     magentaColor?: typeof Color,
     grayColor?: typeof Color,
     polarity?: number,
+    applyToBody: boolean,
 }
 
 
@@ -59,6 +60,7 @@ export function Bluelib({
     magentaColor,
     grayColor,
     polarity,
+    applyToBody,
     ...props
 }: BluelibProps): JSX.Element {
 
@@ -83,6 +85,23 @@ export function Bluelib({
         // @ts-ignore
         props.style["--bluelib-polarity"] = polarity
     }
+
+    React.useEffect(
+        () => {
+            const body = document.querySelector("body")
+            if(applyToBody) {
+                if(body) {
+                    body.className = BuiltinThemes[theme]["bluelib"]
+                }
+            }
+            else {
+                if(body) {
+                    body.className = ""
+                }
+            }
+        },
+        [applyToBody, backgroundColor, foregroundColor]
+    )
 
     return (
         <BaseElement
