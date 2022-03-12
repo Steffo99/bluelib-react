@@ -1,0 +1,32 @@
+{
+  "files": {
+    "0.79675de6.iframe.bundle.js": "./0.79675de6.iframe.bundle.js",
+    "0.79675de6.iframe.bundle.js.map": "./0.79675de6.iframe.bundle.js.map",
+    "1.a3c23054.iframe.bundle.js": "./1.a3c23054.iframe.bundle.js",
+    "1.a3c23054.iframe.bundle.js.map": "./1.a3c23054.iframe.bundle.js.map",
+    "2.dfd0cc5a.iframe.bundle.js": "./2.dfd0cc5a.iframe.bundle.js",
+    "3.d72f7fac.iframe.bundle.js": "./3.d72f7fac.iframe.bundle.js",
+    "main.js": "./main.ecad73bb.iframe.bundle.js",
+    "runtime~main.js": "./runtime~main.b676d9d8.iframe.bundle.js",
+    "vendors~main.css": "./static/css/vendors~main.fc2ff2da.chunk.css",
+    "vendors~main.js": "./vendors~main.4266e788.iframe.bundle.js",
+    "vendors~main.css.map": "./static/css/vendors~main.fc2ff2da.chunk.css.map",
+    "vendors~main.js.map": "./vendors~main.4266e788.iframe.bundle.js.map",
+    "7.381dc940.iframe.bundle.js": "./7.381dc940.iframe.bundle.js",
+    "8.68cd1217.iframe.bundle.js": "./8.68cd1217.iframe.bundle.js",
+    "8.68cd1217.iframe.bundle.js.map": "./8.68cd1217.iframe.bundle.js.map",
+    "9.488e3969.iframe.bundle.js": "./9.488e3969.iframe.bundle.js",
+    "0.79675de6.iframe.bundle.js.LICENSE.txt": "./0.79675de6.iframe.bundle.js.LICENSE.txt",
+    "1.a3c23054.iframe.bundle.js.LICENSE.txt": "./1.a3c23054.iframe.bundle.js.LICENSE.txt",
+    "8.68cd1217.iframe.bundle.js.LICENSE.txt": "./8.68cd1217.iframe.bundle.js.LICENSE.txt",
+    "iframe.html": "./iframe.html",
+    "static/media/elena-cordery-RLlcbkemwnw-unsplash.jpg": "./static/media/elena-cordery-RLlcbkemwnw-unsplash.a7517bd7.jpg",
+    "vendors~main.4266e788.iframe.bundle.js.LICENSE.txt": "./vendors~main.4266e788.iframe.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.b676d9d8.iframe.bundle.js",
+    "static/css/vendors~main.fc2ff2da.chunk.css",
+    "vendors~main.4266e788.iframe.bundle.js",
+    "main.ecad73bb.iframe.bundle.js"
+  ]
+}
